@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore - Proyecto javaScript 2022</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style/styles.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Sweet Alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <header class="container-fluid d-flex justify-content-center" id='header'>
+        <p class="text-light mb-0 p-2 fs-6">La librería online que tenés que tener en tus favoritos ❤️</p>
+    </header>
+
+
+
+
+
+         <!-------------------------------------- Menú ------------------------- -->
+    <nav class="navbar navbar-expand-lg  p-3" id="menu">
+        <div class="container-fluid">
+            <img src="img/books-stack-of-three.png" alt="imgNav" id="imgCarrito">
+            <a id="tittle" class="navbar-brand"> <span class=" fs-4 fw-bold p-5"> BOOKStore </span> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#principio">Listado de Libros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="https://autoresdeargentina.com/">#Editorial
+                            Autores de Argentina</a>
+                    </li>
+
+
+
+                </ul>
+
+            </div>
+
+    </nav>
+    <div class="container"></div>
+
+
+        <!-- GALERÍA DE PRODUCTOS -->
+        <div class="container mt-5 navbar d-flex justify-content-center">
+            <h1 class="recomendados d-flex justify-content-center p-3" id="principio">Nuestros recomendados de la semana
+            </h1>
+
+            <div class="row" id="cards">
+                <!-- <div id="template-card-producto"> -->
+
+
+            </div>
+        </div>
+
+
+
+
+
+        <!-------------------  CHECKOUT----------------------- -->
+<div class="row m-5 carritoContainer">
+    <h2>Tu carrito</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#Código de Referencia</th>
+                    <th scope="col">Título</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Acción</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody id="items"></tbody>
+            <tfoot>
+                <tr id="footer">
+                    <th scope="row" colspan="5" class="totalText">CARRITO</th>
+                </tr>
+            </tfoot>
+        </table>
+
+
+
+    <template id="template-footer">
+        <th scope="row" colspan="2" class="totalText">Total productos</th>
+        <td class="totalText">10</td>
+        <td>
+            <button class="btn btn-light btn-sm" id="vaciar-carrito">
+                VACIAR TODO
+            </button>
+        </td>
+        <td class="font-weight-bold">$ <span>5000</span></td>
+    </template>
+
+    <template id="template-carrito">
+        <tr>
+            <th scope="row">id</th>
+            <td>Café</td>
+            <td>1</td>
+            <td>
+                <button class="btn btn-light btn-sm">
+                    eliminar
+                </button>
+            </td>
+            <td>$ <span>500</span></td>
+        </tr>
+    </template>
+
+
+   
+</div>
+
+
+    <div class="container">
+
+        <div class="carritou col-9 rounded mx-auto d-block m-5 p-5">
+            <h2 class="mt-3 fw-bold mb-4">Por último...</h2>
+            <img src="img/entrega.png" alt="entrega" id="imgCarrito">
+            <h2 class="mt-3 fw-bold mb-4">¡COMPLETÁ TUS DATOS Y FINALIZÁ TU PEDIDO!</h2>
+
+            <input class="col-9 mb-3 p-2" type="text" id="inputNombre" placeholder="Tu nombre">
+            <input class="col-9 mb-3 p-2" type="text" id="emailFormulario" placeholder="Mail de contacto">
+            <input class="col-9 mb-3 p-2" type="number" id="inputTel" placeholder="Teléfono">
+            <input class="col-9 mb-3 p-2" type="text" id="inputDomicilio" placeholder="Domicilio de entrega">
+    
+            <div class="mt-3">
+                <button id="btnEnviar" class="ml-5 btn btn-success">ENVIAR Y COMPRAR</button>
+                <button id="btnCancelar" class="btn btn-danger">Cancelar</button>
+            </div>
+
+            <div id="formularioEnviado">
+                <div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="d-flex justify-content-center">
+            <button id="btn" type="button" class="btn btn-outline-dark p-3">Volver al INICIO</button>
+        </div>
+
+
+
+
+
+    </div>
+         <!-------------------------------------- footer ------------------------- -->
+    <footer>
+        <div class="footer mt-5 p-2">
+            <h6 class="text-center" id="btnCheckout">BOOKStore by Mavi - Todos los derechos reservados 2022</h6>
+    </footer>
+
+
+
+
+
+    <script src="/js/checkout.js"></script>
+    <script src="/js/variables.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
